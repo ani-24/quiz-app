@@ -105,7 +105,7 @@ const questions = [
   },
   {
     ques: "How to add comments in HTML?",
-    1: "&lt;!--  --&gt;",
+    1: "&lt;!-- &nbsp; --&gt;",
     2: "/*  */",
     3: "//",
     4: "None of the above",
