@@ -172,6 +172,12 @@ body {
   text-align: center;
 }
 
+@media (max-width: 500px) {
+  .overlay {
+    font-size: 13rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     min-width: 75%;
