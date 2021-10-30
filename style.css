@@ -15,6 +15,7 @@
   --dark: #1f1f1f;
   --green: #1bb498;
   --greenv2: #179b83;
+  --red: #ff3c00;
 }
 
 body {
@@ -166,16 +167,35 @@ body {
   left: 0;
   background: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: 2rem;
   text-align: center;
+  padding: 0.5em;
 }
 
-@media (max-width: 500px) {
-  .overlay {
-    font-size: 3rem;
-  }
+.overlay ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px;
+}
+
+.overlay ul li {
+  margin: 0 1.5em;
+}
+
+.overlay ul li.correct {
+  color: var(--green);
+}
+
+.overlay ul li.not-attempted {
+  color: var(--grey);
+}
+
+.overlay ul li.wrong {
+  color: var(--red);
 }
 
 @media (max-width: 1200px) {

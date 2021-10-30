@@ -69,12 +69,59 @@ const questions = [
     2: "3",
     3: "2",
     4: "1",
-    correct: "2",
+    correct: 2,
   },
   {
-    ques: "",
+    ques: "How many type of heading levels are allowed in HTML?",
+    1: "6",
+    2: "5",
+    3: "4",
+    4: "1",
+    correct: 1,
+  },
+  {
+    ques: "Which is the correct way to add a link in anchor tag?",
+    1: "www.website.com",
+    2: "website.com",
+    3: "https://www.website.com (or) http://www.website.com",
+    4: "All of the above",
+    correct: 3,
+  },
+  {
+    ques: "How to declare your HTML version to be HTML5?",
+    1: "By Adding &lt;!DOCTYPE html&gt;",
+    2: "By Adding &lt;doctype html&gt;",
+    3: "By Removing html, head, and body tags",
+    4: "None of the above",
+    correct: 1,
+  },
+  {
+    ques: "Which type of input tag checks if your value is email or not?",
+    1: "text",
+    2: "email",
+    3: "password",
+    4: "None of the above",
+    correct: 2,
+  },
+  {
+    ques: "How to add comments in HTML?",
+    1: "&lt;!--  --&gt;",
+    2: "/*  */",
+    3: "//",
+    4: "None of the above",
+    correct: 1,
+  },
+  {
+    ques: "How to create an <i>tilted text effect</i>?",
+    1: "&lt;em&gt;",
+    2: "&lt;i&gt;",
+    3: "Both of the above",
+    4: "None of the above",
+    correct: 3,
   },
 ];
+
+const markingScheme = { correct: 4, wrong: -1 };
 
 const questionArea = document.querySelector(".question p");
 const optionItems = document.querySelectorAll(".option");
@@ -118,7 +165,6 @@ const showQues = () => {
     }
     if (questions[activeQues].selected == index) {
       item.parentElement.classList.add("selected");
-      console.log(item.parentElement);
     }
   });
   activeQuesIndicator.innerHTML = `${activeQues + 1}/${questions.length}`;
@@ -138,19 +184,33 @@ const submit = () => {
   let marks = 0;
   questions.forEach((el) => {
     if (el.selected === el.correct) {
-      marks += 5;
+      marks += markingScheme.correct;
     } else if (!el.selected) {
       return;
     } else if (el.selected !== el.correct) {
-      marks -= 1;
+      marks += markingScheme.wrong;
     }
-    console.log(el.selected, el.correct, marks);
-    console.log(marks);
   });
   const overlay = document.createElement("div");
   overlay.classList.add("overlay");
   document.body.appendChild(overlay);
-  overlay.innerHTML = `You scored ${marks} marks.`;
+  overlay.innerHTML = `<h1 class="title">You scored ${marks} marks.</h1>`;
+  const scoreList = document.createElement("ul");
+  questions.forEach((el) => {
+    const newItem = document.createElement("li");
+    if (el.selected == el.correct) {
+      newItem.classList.add("correct");
+      newItem.innerHTML = "+4";
+    } else if (!el.selected) {
+      newItem.classList.add("not-attempted");
+      newItem.innerHTML = "0";
+    } else if (el.selected != el.correct) {
+      newItem.classList.add("wrong");
+      newItem.innerHTML = "-1";
+    }
+    scoreList.appendChild(newItem);
+  });
+  overlay.appendChild(scoreList);
 };
 
 const tik = () => {
