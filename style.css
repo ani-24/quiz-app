@@ -185,3 +185,9 @@ body {
     left: 50%;
   }
 }
+
+@media (max-width: 400px) {
+  html {
+    font-size: 10px;
+  }
+}
