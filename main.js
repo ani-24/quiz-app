@@ -47,6 +47,22 @@ const questions = [
     4: "None of the above",
     correct: 2,
   },
+  {
+    ques: "What are attributes in HTML?",
+    1: "&lt;body&gt;",
+    2: "The code modifies tag",
+    3: "The entire content of the page",
+    4: "None of the above",
+    correct: 2,
+  },
+  {
+    ques: "Which attribute is used to add background image to the page",
+    1: "bgcolor",
+    2: "bgimg",
+    3: "background",
+    4: "None of the above",
+    correct: 3,
+  },
 ];
 
 const questionArea = document.querySelector(".question p");
