@@ -170,3 +170,18 @@ body {
   align-items: center;
   font-size: 5rem;
 }
+
+@media (max-width: 1200px) {
+  .container {
+    min-width: 75%;
+    max-width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    min-width: 95%;
+  }
+  .time {
+    left: 50%;
+  }
+}
