@@ -63,6 +63,17 @@ const questions = [
     4: "None of the above",
     correct: 3,
   },
+  {
+    ques: "How many types of list can you create using HTML?",
+    1: "4",
+    2: "3",
+    3: "2",
+    4: "1",
+    correct: "2",
+  },
+  {
+    ques: "",
+  },
 ];
 
 const questionArea = document.querySelector(".question p");

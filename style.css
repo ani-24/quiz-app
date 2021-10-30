@@ -169,6 +169,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 5rem;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
