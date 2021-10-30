@@ -50,7 +50,7 @@ const questions = [
   {
     ques: "What are attributes in HTML?",
     1: "&lt;body&gt;",
-    2: "The code modifies tag",
+    2: "The code modifies the tag in which they are written",
     3: "The entire content of the page",
     4: "None of the above",
     correct: 2,
